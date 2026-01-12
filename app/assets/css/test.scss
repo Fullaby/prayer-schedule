@@ -1,0 +1,101 @@
+.test {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f7f7f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  font-family: "Inter", sans-serif;
+  color: #333;
+
+  .select-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    select {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      font-size: 1rem;
+      transition: all 0.2s ease-in-out;
+
+      &:focus {
+        outline: none;
+        border-color: #4f46e5;
+        box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3);
+      }
+    }
+  }
+  .jadwal-table {
+    tr.today-row {
+      background-color: #6be77370; 
+      td {
+        color: #ff3300; 
+        font-weight: bold;
+      }
+    }
+  }
+
+  .jadwal-table-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+
+    .jadwal-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background-color: #eef2ff;
+      h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #4f46e5;
+      }
+      p {
+        margin: 0.25rem 0 0 0;
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+
+      thead {
+        background-color: #e0e7ff;
+        tr {
+          th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: #4f46e5;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid #e5e7eb;
+          transition: background-color 0.2s ease-in-out;
+
+          &:hover {
+            background-color: #f0f5ff;
+          }
+
+          td {
+            padding: 0.75rem 1rem;
+            font-size: 0.95rem;
+            color: #374151;
+          }
+        }
+      }
+    }
+  }
+}
