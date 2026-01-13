@@ -1,2 +1,5 @@
-User-Agent: *
-Disallow:
+# /public/robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://prayer-schedule-two.vercel.app/sitemap.xml
