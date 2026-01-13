@@ -104,40 +104,53 @@ const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,'0')
 
 <template>
   <div class="container-wrapper">
-    <h1>JADWAL SHALAT</h1>
+    <div class="main-wrap-title">
+      <h1 class="main-title">JADWAL SHALAT</h1>
+      <p>
+        Lihat jadwal shalat harian untuk wilayah Anda. Pilih provinsi,
+        kabupaten/kota, dan bulan untuk melihat jadwal lengkap.
+      </p>
+    </div>
     <div class="select-wrapper">
-      <select v-model="website.selectProvinsi">
-        <option disabled value="">Please select a province</option>
-        <option
-          v-for="(element, index) in website.name.data"
-          :key="index"
-          :value="element"
-        >
-          {{ element }}
-        </option>
-      </select>
-
-      <select v-model="website.selectkabKota">
-        <option disabled value="">Please select a city</option>
-        <option
-          v-for="(element, index) in website.kabKota.data"
-          :key="index"
-          :value="element"
-        >
-          {{ element }}
-        </option>
-      </select>
-
-      <select v-model="website.month">
-        <option disabled value="">Please select a month</option>
-        <option
-          v-for="(element, index) in website.monthFull"
-          :key="index"
-          :value="index + 1"
-        >
-          {{ element }}
-        </option>
-      </select>
+      <div class="wrapper-select-province">
+        <p>Pilih provinsi tempat tinggal Anda</p>
+        <select v-model="website.selectProvinsi">
+          <option disabled value="">Please select a province</option>
+          <option
+            v-for="(element, index) in website.name.data"
+            :key="index"
+            :value="element"
+          >
+            {{ element }}
+          </option>
+        </select>
+      </div>
+      <div class="wrapper-select-city">
+        <p>Pilih kabupaten atau kota</p>
+        <select v-model="website.selectkabKota">
+          <option disabled value="">Please select a city</option>
+          <option
+            v-for="(element, index) in website.kabKota.data"
+            :key="index"
+            :value="element"
+          >
+            {{ element }}
+          </option>
+        </select>
+      </div>
+      <div class="wrapper-select-month">
+        <p>Pilih bulan yang ingin dilihat</p>
+        <select v-model="website.month">
+          <option disabled value="">Please select a month</option>
+          <option
+            v-for="(element, index) in website.monthFull"
+            :key="index"
+            :value="index + 1"
+          >
+            {{ element }}
+          </option>
+        </select>
+      </div>
     </div>
 
     <div v-if="website.jadwal" class="jadwal-table-container">

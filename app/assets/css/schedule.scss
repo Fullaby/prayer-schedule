@@ -1,27 +1,96 @@
+body {
+  background-color: yellow;
+}
 .container-wrapper {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #f7f7f9;
+  background-color: #f7f7f900;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   font-family: "Inter", sans-serif;
   color: #333;
+  z-index: 10;
+  position: relative;
+  .main-wrap-title {
+    .main-title {
+      background: linear-gradient(90deg, #00ff9c, #22c55e, #00ff9c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 12px rgba(0, 255, 156, 0.35);
+    }
+    text-align: center;
+    p {
+      color: rgb(114, 114, 114);
+    }
+  }
 
   .select-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2rem;
+    p {
+      color: white;
+    }
+    .wrapper-select-city,
+    .wrapper-select-month,
+    .wrapper-select-province {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      border-radius: 20px;
+      position: relative;
+      background: #050b18;
+    }
+    .wrapper-select-city::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1.5px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #22c55e, #06b6d4);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    .wrapper-select-month::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1.5px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #10b981, #84cc16);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+    .wrapper-select-province::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 1.5px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
 
     select {
       padding: 0.5rem 1rem;
       border-radius: 8px;
-      border: 1px solid #ccc;
-      background-color: #fff;
+      border: 1px solid #4f46e5;
+      background-color: #4f46e5;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
       font-size: 1rem;
       transition: all 0.2s ease-in-out;
+      z-index: 10;
+      color: white;
 
       &:focus {
         outline: none;
@@ -41,16 +110,18 @@
   }
 
   .jadwal-table-container {
-    background-color: #fff;
+    background-color: #ffffff00;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     overflow-x: auto; // horizontal scroll if table is wider
     max-height: 600px; // optional, vertical scroll
     overflow-y: auto; // enable vertical scrolling
+    scrollbar-width: none;
+    border: 1px solid #062768;
     .jadwal-header {
       padding: 1rem 1.5rem;
-      border-bottom: 1px solid #e5e7eb;
-      background-color: #eef2ff;
+      border-bottom: 1px solid #062768;
+      background-color: #eef2ff00;
       h2 {
         margin: 0;
         font-size: 1.25rem;
@@ -70,7 +141,7 @@
       min-width: 800px;
 
       thead {
-        background-color: #e0e7ff;
+        background-color: #020f1d;
         position: sticky; // make header sticky
         top: 0; // stick to top of container
         z-index: 10; // stay above tbody rows
@@ -91,7 +162,7 @@
           transition: background-color 0.2s ease-in-out;
 
           &:hover {
-            background-color: #f0f5ff;
+            background-color: #0c285f;
           }
 
           &.today-row {
@@ -105,7 +176,7 @@
           td {
             padding: 0.75rem 1rem;
             font-size: 0.95rem;
-            color: #374151;
+            color: #ffffff;
           }
         }
       }
@@ -114,7 +185,7 @@
 }
 .site-footer {
   background-color: #4e46e500; // purple
-  color: #0f455c;
+  color: #0ab6ff;
   padding: 2rem 1rem;
   text-align: center;
   font-family: "Inter", sans-serif;
