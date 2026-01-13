@@ -22,28 +22,27 @@ onMounted(() => {
 
 
 useHead({
-  title: `Jadwal Shalat Terbaru 2026`,
-  htmlAttrs: {
-    lang: 'id'
-  },
+  title: `Jadwal Shalat 2026 - Provinsi & Kota Terbaru | Nuxt`,
+  htmlAttrs: { lang: 'id' },
   meta: [
-    { name: 'description', content: 'Cek jadwal shalat terbaru untuk provinsi dan kota Anda, lengkap dengan waktu imsak, subuh, dzuhur, ashar, maghrib, dan isya.' },
-    { name: 'keywords', content: 'jadwal shalat, waktu shalat, dzuhur, ashar, maghrib, isya, subuh, imsak, kota, provinsi' },
+    { name: 'description', content: 'Cek jadwal shalat 2026 lengkap untuk semua provinsi dan kota di Indonesia, termasuk waktu imsak, subuh, dzuhur, ashar, maghrib, dan isya. Dibuat dengan Nuxt 3 untuk pengalaman cepat dan akurat.' },
+    { name: 'keywords', content: 'jadwal shalat 2026, waktu shalat, dzuhur, ashar, maghrib, isya, subuh, imsak, Nuxt 3, Indonesia, kota, provinsi, jadwal dengan nuxt, nuxt mantap' },
     { name: 'author', content: 'Steven Leonardo' },
     { name: 'robots', content: 'index, follow' },
-
     { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
 
-    { property: 'og:title', content: `Jadwal Shalat Terbaru 2026` },
-    { property: 'og:description', content: 'Cek jadwal shalat lengkap untuk kota dan provinsi Anda, dengan waktu yang akurat.' },
+    // Open Graph
+    { property: 'og:title', content: 'Jadwal Shalat 2026 - Provinsi & Kota Terbaru | Nuxt' },
+    { property: 'og:description', content: 'Cek jadwal shalat 2026 lengkap untuk kota dan provinsi di Indonesia, dengan waktu yang akurat. Dibuat menggunakan Nuxt 3.' },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: 'https://prayer-schedule-two.vercel.app/' },
     { property: 'og:image', content: 'https://prayer-schedule-two.vercel.app/og-image.jpg' },
 
+    // Twitter
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: `Jadwal Shalat Terbaru 2026` },
-    { name: 'twitter:description', content: 'Cek jadwal shalat lengkap untuk kota dan provinsi Anda, dengan waktu yang akurat.' },
-    { name: 'twitter:image', content: 'https://prayer-schedule-two.vercel.app/og-image.jpg' },
+    { name: 'twitter:title', content: 'Jadwal Shalat 2026 - Provinsi & Kota Terbaru | Nuxt' },
+    { name: 'twitter:description', content: 'Cek jadwal shalat 2026 lengkap untuk kota dan provinsi di Indonesia, dengan waktu yang akurat. Dibuat menggunakan Nuxt 3.' },
+    { name: 'twitter:image', content: 'https://prayer-schedule-two.vercel.app/og-image.jpg' }
   ],
   link: [
     { rel: 'canonical', href: 'https://prayer-schedule-two.vercel.app/' }
@@ -60,6 +59,21 @@ useHead({
           "@type": "SearchAction",
           "target": "https://prayer-schedule-two.vercel.app/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
+        }
+      })
+    },
+    // Optional: Structured data for Prayer Times (Schema.org)
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "Jadwal Shalat 2026 Indonesia",
+        "description": "Dataset berisi jadwal shalat lengkap tahun 2026 untuk seluruh provinsi dan kota di Indonesia, termasuk waktu imsak, subuh, dzuhur, ashar, maghrib, dan isya.",
+        "url": "https://prayer-schedule-two.vercel.app/",
+        "creator": {
+          "@type": "Person",
+          "name": "Steven Leonardo"
         }
       })
     }
@@ -170,5 +184,14 @@ const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,'0')
         </tbody>
       </table>
     </div>
+    <footer class="site-footer">
+      <div class="container">
+        <p>© {{ currentYear }} Jadwal Shalat 2026. All rights reserved.</p>
+        <p>
+          By Steven Leonardo |
+          <a href="https://github.com/Fullaby" target="_blank">Visit website</a>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
