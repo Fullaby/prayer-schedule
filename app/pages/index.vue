@@ -1,10 +1,28 @@
 <script setup lang="js">
 import { ref, watch } from 'vue'
-import '~/assets/css/test.scss'
+import '~/assets/css/schedule.scss'
 import { useWebsiteStore } from '~/stores/website'
+const website = useWebsiteStore()
+
+onMounted(() => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+        await website.getProvinceFromCoords(latitude, longitude);
+      },
+      (error) => {
+        console.error("Error getting location:", error);
+      }
+    );
+  } else {
+    console.error("Geolocation is not supported by this browser.");
+  }
+})
+
 
 useHead({
-  title: 'Jadwal Shalat Terbaru 2026 - [Your City/Province]',
+  title: `Jadwal Shalat Terbaru 2026`,
   htmlAttrs: {
     lang: 'id'
   },
@@ -16,19 +34,19 @@ useHead({
 
     { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
 
-    { property: 'og:title', content: 'Jadwal Shalat Terbaru 2026 - [Your City/Province]' },
+    { property: 'og:title', content: `Jadwal Shalat Terbaru 2026` },
     { property: 'og:description', content: 'Cek jadwal shalat lengkap untuk kota dan provinsi Anda, dengan waktu yang akurat.' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://yourdomain.com/' },
-    { property: 'og:image', content: 'https://yourdomain.com/og-image.jpg' },
+    { property: 'og:url', content: 'https://prayer-schedule-two.vercel.app/' },
+    { property: 'og:image', content: 'https://prayer-schedule-two.vercel.app/og-image.jpg' },
 
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Jadwal Shalat Terbaru 2026 - [Your City/Province]' },
+    { name: 'twitter:title', content: `Jadwal Shalat Terbaru 2026` },
     { name: 'twitter:description', content: 'Cek jadwal shalat lengkap untuk kota dan provinsi Anda, dengan waktu yang akurat.' },
-    { name: 'twitter:image', content: 'https://yourdomain.com/og-image.jpg' },
+    { name: 'twitter:image', content: 'https://prayer-schedule-two.vercel.app/og-image.jpg' },
   ],
   link: [
-    { rel: 'canonical', href: 'https://yourdomain.com/' }
+    { rel: 'canonical', href: 'https://prayer-schedule-two.vercel.app/' }
   ],
   script: [
     {
@@ -37,18 +55,16 @@ useHead({
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Jadwal Shalat 2026",
-        "url": "https://yourdomain.com",
+        "url": "https://prayer-schedule-two.vercel.app/",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://yourdomain.com/search?q={search_term_string}",
+          "target": "https://prayer-schedule-two.vercel.app/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       })
     }
   ]
 })
-const website = useWebsiteStore()
-
 await callOnce(website.fetchProvinsi)
 
 watch(
@@ -56,7 +72,7 @@ watch(
   async (newProv) => {
     if (newProv) {
       await website.fetchKabKota()
-      website.selectkabKota = '' 
+      website.selectkabKota = ''
     }
   }
 )
@@ -73,7 +89,7 @@ const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,'0')
 </script>
 
 <template>
-  <div class="test">
+  <div class="container-wrapper">
     <h1>JADWAL SHALAT</h1>
     <div class="select-wrapper">
       <select v-model="website.selectProvinsi">
