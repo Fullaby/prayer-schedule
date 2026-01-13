@@ -68,7 +68,7 @@ export const useWebsiteStore = defineStore("websiteStore", {
       } else if (data.address.municipality) {
         this.current.city = `Kota ${data.address.municipality}`;
       } else if (data.address.county) {
-        this.current.city = `Kabupaten ${data.address.county}`;
+        this.current.city = `Kab. ${data.address.county}`;
       } else if (data.address.suburb) {
         this.current.city = `Kecamatan ${data.address.suburb}`;
       } else {
