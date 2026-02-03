@@ -26,7 +26,7 @@ useSeoMeta({
   htmlAttrs: { lang: 'id' },
   meta: [
     { name: 'description', content: 'Cek jadwal shalat 2026 lengkap untuk semua provinsi dan kota di Indonesia, termasuk waktu imsak, subuh, dzuhur, ashar, maghrib, dan isya. Dibuat dengan Nuxt 3 untuk pengalaman cepat dan akurat.' },
-    { name: 'keywords', content: 'jadwal shalat 2026, waktu shalat, dzuhur, ashar, maghrib, isya, subuh, imsak, Nuxt 3, Indonesia, kota, provinsi, jadwal dengan nuxt, nuxt mantap' },
+    { name: 'keywords', content: 'jadwal shalat 2026, waktu shalat, dzuhur, ashar, maghrib, isya, subuh, imsak, Nuxt 3, Indonesia, kota, provinsi, jadwal dengan nuxt, nuxt mantap, steven, steven leonardo, steven leonardo web dev, steven leonardo web developer, steven leonardo project, steven leonardo web developer project' },
     { name: 'author', content: 'Steven Leonardo' },
     { name: 'robots', content: 'index, follow' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
