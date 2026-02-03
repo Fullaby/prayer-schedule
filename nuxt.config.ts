@@ -1,22 +1,28 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: "My Nuxt 3 App",
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
-    },
-  },
+  ssr: true,
   compatibilityDate: "2025-07-15",
-  devtools: { enabled: true },
+
+  site: {
+    url: "https://islamic-prayer.vercel.app",
+  },
+
   modules: [
     "@pinia/nuxt",
-    [
-      "nuxt-simple-sitemap",
-      {
-        siteUrl: "https://prayer-schedule-two.vercel.app",
-        routes: async () => ["/", "/about", "/jadwal/jakarta", "/jadwal/batam"],
-      },
-    ],
+    "nuxt-site-config",
+    "@nuxtjs/sitemap",
   ],
-  ssr: true,
+
+  sitemap: {
+    urls: ["/"],
+  },
+
+  robots: {
+    sitemap: "https://islamic-prayer.vercel.app/sitemap.xml",
+  },
+
+  nitro: {
+    prerender: {
+      routes: ["/sitemap.xml"],
+    },
+  },
 });

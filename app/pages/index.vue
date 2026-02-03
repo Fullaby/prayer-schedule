@@ -21,7 +21,7 @@ onMounted(() => {
 })
 
 
-useHead({
+useSeoMeta({
   title: `Jadwal Shalat 2026 - Provinsi & Kota Terbaru | Nuxt`,
   htmlAttrs: { lang: 'id' },
   meta: [
@@ -35,17 +35,17 @@ useHead({
     { property: 'og:title', content: 'Jadwal Shalat 2026 - Provinsi & Kota Terbaru | Nuxt' },
     { property: 'og:description', content: 'Cek jadwal shalat 2026 lengkap untuk kota dan provinsi di Indonesia, dengan waktu yang akurat. Dibuat menggunakan Nuxt 3.' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://prayer-schedule-two.vercel.app/' },
-    { property: 'og:image', content: 'https://prayer-schedule-two.vercel.app/og-image.jpg' },
+    { property: 'og:url', content: 'https://islamic-prayer.vercel.app' },
+    { property: 'og:image', content: 'https://islamic-prayer.vercel.app/og-image.jpg' },
 
     // Twitter
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'Jadwal Shalat 2026 - Provinsi & Kota Terbaru | Nuxt' },
     { name: 'twitter:description', content: 'Cek jadwal shalat 2026 lengkap untuk kota dan provinsi di Indonesia, dengan waktu yang akurat. Dibuat menggunakan Nuxt 3.' },
-    { name: 'twitter:image', content: 'https://prayer-schedule-two.vercel.app/og-image.jpg' }
+    { name: 'twitter:image', content: 'https://islamic-prayer.vercel.app/og-image.jpg' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://prayer-schedule-two.vercel.app/' }
+    { rel: 'canonical', href: 'https://islamic-prayer.vercel.app' }
   ],
   script: [
     {
@@ -54,10 +54,10 @@ useHead({
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Jadwal Shalat 2026",
-        "url": "https://prayer-schedule-two.vercel.app/",
+        "url": "https://islamic-prayer.vercel.app",
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://prayer-schedule-two.vercel.app/search?q={search_term_string}",
+          "target": "https://islamic-prayer.vercel.app/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       })
@@ -70,7 +70,7 @@ useHead({
         "@type": "Dataset",
         "name": "Jadwal Shalat 2026 Indonesia",
         "description": "Dataset berisi jadwal shalat lengkap tahun 2026 untuk seluruh provinsi dan kota di Indonesia, termasuk waktu imsak, subuh, dzuhur, ashar, maghrib, dan isya.",
-        "url": "https://prayer-schedule-two.vercel.app/",
+        "url": "https://islamic-prayer.vercel.app/",
         "creator": {
           "@type": "Person",
           "name": "Steven Leonardo"
