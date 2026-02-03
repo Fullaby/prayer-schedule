@@ -202,7 +202,7 @@ const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2,'0')
         <p>© {{ currentYear }} Jadwal Shalat 2026. All rights reserved.</p>
         <p>
           By Steven Leonardo |
-          <a href="https://github.com/Fullaby" target="_blank">Visit website</a>
+          <a href="https://steven-leonardo.vercel.app" target="_blank">Visit website</a>
         </p>
       </div>
     </footer>
